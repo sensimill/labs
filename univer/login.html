@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+    <title>login  page</title>
+</head>
+<script type="text/javascript">
+    function display(form){
+        if (form.username.value=="admin") {
+            if (form.password.value=="admin") {
+                location="index.html"
+            } else {
+                alert("Invalid Password")
+            }
+        }
+        else {  alert("Invalid Username")
+        }
+    }
+</script>
+<body >
+
+<form style = " left      : 50%;
+    top       : 50%;
+    text-align: center;
+    position  : absolute;
+    transform : translate(-60%, -60%);">
+    <input type="text" name="username" /><br><br>
+    <input type="password" name="password"/><br><br>
+    <input type="button" value="Login" onClick="display(this.form)"/>
+
+</form>
+
+</body>
