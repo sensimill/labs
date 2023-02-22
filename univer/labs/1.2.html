@@ -1,6 +1,110 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <style type="text/css">
+        .big-box {
+            border: 2px solid green;
+            height: 800px;
+            width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .small-box {
+            border: 2px solid red;
+            height: 22%;
+            width: 97%;
+            display: inline-block;
+            margin: 10px ;
+        }
+        .inner-box {
+            width: 100%;
+            height: 100px;
+            margin: 5px auto;
+            display: flex;
+        }
+        .blue-box{
+            border: 2px solid blue;
+            width: 28%;
+            height: 130px;
+            margin: 10px auto;
+            display: flex ;
+            justify-content: left;
+        }
+        .inner-box-yellow{
+            width: 100%;
+            height: 50%;
+            margin: 10px auto;
+            display: grid;
+        }
+        .yellow-box-one{
+            border: 2px solid yellow;
+            width: 90%;
+            height: 50px;
+            margin: 1px auto;
+            flex-direction: column;
+        }
+        .inner-box-blue{
+            width: 100%;
+            height: 100px;
+            margin: 5px auto;
+            display: flex;
+        }
+        .blue-box-two{
+            border: 2px solid blue;
+            width: 20%;
+            height: 130px;
+            margin: 10px auto;
+            display: flex ;
+            justify-content: left;
+        }
+       .inner-box-blue-second{
+            width: 100%;
+            height: 95%;
+            margin: auto;
+            display: flex;
+        }
+        .vertical-blue-box{
+            border: 2px solid blue;
+            width: 25%;
+            height: 90%;
+            margin: 10px;
+            margin-right: auto ;
+        }
+        .horizontal-blue{
+            width: 100%;
+            height: 95%;
+            margin: auto;
+            display: flex;
+        }
+        .horizontal-blue-box{
+            border: 2px solid blue;
+            width: 95%;
+            height: 95%;
+            margin: 6px;
+            margin-left: auto
+        }
+        .inner-box-yellow-second{
+            width: 100%;
+            height: 95%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .big-yellow-box{
+            border: 2px solid yellow;
+            width: 95%;
+            height: 90%;
+            margin: 5px auto;
+
+        }
+        .small-yellow-box{
+            border: 2px solid yellow;
+            width: 95%;
+            height: 10%;
+            margin: 2px auto;
+
+        }
+</style>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -8,7 +112,57 @@
     <title>lab 1.2</title>
 </head>
 <body>
+<div class="big-box">
+
+    <div class="small-box">
+        <div class="inner-box">
+            <div class="blue-box"></div>
+            <div class="blue-box"></div>
+            <div class="blue-box">
+                <div class="inner-box-yellow">
+                    <div class ="yellow-box-one"></div>
+                    <div class ="yellow-box-one"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-box">
+        <div class ="inner-box-blue">
+            <div class="blue-box-two"></div>
+            <div class="blue-box-two"></div>
+            <div class="blue-box-two"></div>
+            <div class="blue-box-two"></div>
+        </div>
+    </div>
+
+    <div class="small-box">
+        <div class="inner-box-blue-second">
+            <div class="vertical-blue-box"></div>
+        <div class="horizontal-blue">
+            <div class="horizontal-blue-box">
+                <div class="inner-box-yellow-second">
+                    <div class="big-yellow-box"></div>
+                    <div class="small-yellow-box"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 
 
+    <div class="small-box">
+        <div class="inner-box">
+            <div class="blue-box">
+                <div class="inner-box-yellow">
+                    <div class ="yellow-box-one"></div>
+                    <div class ="yellow-box-one"></div>
+                </div>
+            </div>
+            <div class="blue-box"></div>
+            <div class="blue-box"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
