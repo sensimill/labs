@@ -11,7 +11,8 @@
                 alert("Invalid Password")
             }
         }
-        else {  alert("Invalid Username")
+        else {
+            alert("Invalid Username")
         }
     }
 </script>
@@ -22,7 +23,9 @@
     text-align: center;
     position  : absolute;
     transform : translate(-60%, -60%);">
-    <input value="Your username" onfocus="this.value=''" type="text" name="username" /><br><br>
+    <h3>Your username</h3>
+    <input onfocus="this.value=''" type="text" name="username" /><br><br>
+    <h3>Your password</h3>
     <input type="password" name="password"/><br><br>
     <input type="button" value="Login" onClick="display(this.form)"/>
 
