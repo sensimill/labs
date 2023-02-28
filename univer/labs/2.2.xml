@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="2.2.css"?>
+
+<university>
+    <student>
+        <firstname>Mykyta</firstname>
+        <secondname>Zavatskyi</secondname>
+        <lastplaceofstudy>School</lastplaceofstudy>
+        <phone>3246137613</phone>
+        <faculty>FKPI</faculty>
+    </student>
+    <student>
+        <firstname>Grigoriy</firstname>
+        <secondname>Glovo</secondname>
+        <lastplaceofstudy>College</lastplaceofstudy>
+        <phone>7673131210</phone>
+        <faculty>FKPI</faculty>
+    </student>
+    <student>
+        <firstname>Dmytro</firstname>
+        <secondname>Antonov</secondname>
+        <lastplaceofstudy>School</lastplaceofstudy>
+        <phone>2131736512</phone>
+        <faculty>FKPI</faculty>
+    </student>
+
+
+
+
+
+
+
+</university>
