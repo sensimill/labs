@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.4</title>
+
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    //межі для x та y
+    const xMin = -5;
+    const xMax = 5;
+    const yMin = -5;
+    const yMax = 5;
+
+    // Розмір канвасу
+    const canvasWidth = canvas.width;
+    const canvasHeight = canvas.height;
+
+    // для x та y
+    const scaleX = canvasWidth / (xMax - xMin);
+    const scaleY = canvasHeight / (yMax - yMin);
+
+    // Функція для перетворення координат відносно масштабування
+    function transformX(x) {
+        return (x - xMin) * scaleX;
+    }
+
+    function transformY(y) {
+        return canvasHeight - (y - yMin) * scaleY;
+    }
+
+    // Початкові значення для x та y
+    let x = xMin;
+    let y = Math.sin(Math.pow(x, 3)) / Math.cos(Math.pow(x, 3));
+
+    // Функція для малювання рядка
+    function drawLine() {
+        ctx.beginPath();
+        ctx.moveTo(transformX(x), transformY(y));
+
+        // Крок для збільшення x
+        const step = 0.1;
+
+        // Переміщуємося по траєкторії
+        while (x < xMax) {
+            x += step;
+            y = Math.sin(Math.pow(x, 3)) / Math.cos(Math.pow(x, 3));
+            ctx.lineTo(transformX(x), transformY(y));
+        }
+        // Рисуємо рядок на канвасі
+        ctx.strokeStyle = "#ff0000"; // червоний колір
+        ctx.stroke();
+    }
+    function canvasBlink() {
+        if (canvas.style.visibility === "hidden") {
+            canvas.style.visibility = "visible";
+        }else {
+            canvas.style.visibility = "hidden";
+        }
+    }
+    setInterval(drawLine, 500);
+    setInterval(canvasBlink, 500);
+
+
+</script>
+</body>
+</html>

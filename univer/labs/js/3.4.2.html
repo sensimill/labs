@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Графічні фігури</title>
+    <style>
+        canvas {
+            background-color: #333;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600"></canvas>
+<script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        // Координати трикутника
+        const triangleX = 50;
+        const triangleY = canvas.height - 50;
+        const triangleSize = 50;
+
+        // Координати прямокутника
+        const rectX = canvas.width / 2 - 50;
+        const rectY = canvas.height / 2 - 50;
+        const rectWidth = 100;
+        const rectHeight = 100;
+
+        // Координати кульки
+        let ballX = triangleX + triangleSize / 2;
+        let ballY = triangleY - triangleSize / 2;
+        const ballSize = 20;
+        let ballSpeedX = 5;
+        let ballSpeedY = -5;
+        let ballColor = "red";
+
+        // трикутник
+        function drawTriangle(){
+        ctx.fillStyle = "green";
+        ctx.beginPath();
+        ctx.moveTo(triangleX, triangleY);
+        ctx.lineTo(triangleX + triangleSize, triangleY);
+        ctx.lineTo(triangleX + triangleSize / 2, triangleY - triangleSize);
+        ctx.fill();
+        }
+
+
+        // прямокутник
+        function drawRectangle(){
+        ctx.fillStyle = "blue";
+        ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+        }
+
+
+        //малювання кульки
+        function drawBall() {
+        ctx.beginPath();
+        ctx.arc(ballX, ballY, ballSize, 0, Math.PI * 2);
+        ctx.fillStyle = ballColor;
+        ctx.fill();
+    }
+
+        //рух кульки
+        function moveBall() {
+        // Перевірка на зіткнення з прямокутником
+        if (ballX + ballSize >= rectX && ballX - ballSize <= rectX + rectWidth &&
+        ballY + ballSize >= rectY && ballY - ballSize <= rectY + rectHeight) {
+        ballSpeedY = -ballSpeedY;
+
+    }
+
+        // Перевірка, чи кулька виходить за межі екрану
+        if (ballX + ballSize >= canvas.width || ballX - ballSize <= 0) {
+        ballSpeedX = -ballSpeedX;
+    }
+        if (ballY + ballSize >= canvas.height || ballY - ballSize <= 0) {
+        ballSpeedY = -ballSpeedY;
+    }
+
+        // Рух кульки
+        ballX += ballSpeedX;
+        ballY += ballSpeedY;
+    }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawTriangle();
+            drawRectangle();
+            drawBall();
+            moveBall();
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+</script>
+</body>
+    </html>

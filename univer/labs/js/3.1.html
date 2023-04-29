@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.1</title>
+    <script>
+        // крок 1: запит на введення першого числа та перевірка умови
+        let num1 = prompt("Введіть додатнє ціле число №1:");
+        while (num1 <= 0 || !Number.isInteger(+num1)) {
+            num1 = prompt("Введіть додатнє ціле число №1:");
+        }
+
+        // крок 2: запит на введення другого числа та перевірка умови
+        let num2 = prompt("Введіть додатнє ціле число №2:");
+        while (num2 <= 0 || !Number.isInteger(+num2)) {
+            num2 = prompt("Введіть додатнє ціле число №2:");
+        }
+
+        // крок 3: знаходження добутку непарних чисел
+        let min = Math.min(num1, num2);
+        let max = Math.max(num1, num2);
+        let product = 1;
+        for (let i = min; i <= max; i++) {
+            if (i % 2 === 1) {
+                product *= i;
+            }
+        }
+
+        // крок 4: виведення результату у вікно повідомлень
+        alert("Добуток непарних чисел в діапазоні від " + min + " до " + max + " дорівнює " + product + ".");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

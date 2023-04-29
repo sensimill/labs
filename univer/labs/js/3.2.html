@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>array</title>
+    <script>
+        alert("На кожне питання тесту відводиться 15 секунд, після стікання часу, відповідь буде вважатися помилковою");
+        let name = prompt("Введіть ваше ім'я:");
+
+        let score = 0;
+        let questions = [
+            {
+            },
+            {
+                question: "5 + 7 = 12?",
+                answer: true,
+            },
+            {
+                question: "15 - 9 = 6?",
+                answer: true,
+            },
+            {
+                question: "3 * 5 = 12?",
+                answer: false,
+            },
+            {
+                question: "20 / 4 = 5?",
+                answer: true,
+            },
+            {
+                question: "10 % 3 = 1?",
+                answer: true,
+            },
+        ];
+
+        let currentQuestion = 0;
+        let timer;
+
+        function displayQuestion() {
+            document.getElementById("question").innerHTML = questions[currentQuestion].question;
+            let timeLeft = 15;
+            document.getElementById("timer").innerHTML = "Time left: " + timeLeft + "s";
+            timer = setInterval(function() {
+                timeLeft--;
+                document.getElementById("timer").innerHTML = "Time left: " + timeLeft + "s";
+                if (timeLeft === 0) {
+                    clearInterval(timer);
+                    checkAnswer(false);
+                }
+            }, 1000);
+        }
+
+        function checkAnswer(answer) {
+            clearInterval(timer);
+            if (answer === questions[currentQuestion].answer) {
+                score++;
+            }
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                displayQuestion();
+            } else {
+                let grade = "";
+                if (score === 5) {
+                    grade = "відмінно";
+                } else if (score >= 3) {
+                    grade = "добре";
+                } else if (score >= 2) {
+                    grade = "задовільно";
+                } else {
+                    grade = "незадовільно";
+                }
+
+                alert("Студент " + name + " отримав за тест " + grade + ".");
+            }
+        }
+
+        displayQuestion();
+    </script>
+
+</head>
+<body>
+
+    <div>
+        <p id="question"></p>
+        <p id="timer"></p>
+        <button onclick="checkAnswer(true)">Так</button>
+        <button onclick="checkAnswer(false)">Ні</button>
+    </div>
+
+</body>
+</html>
