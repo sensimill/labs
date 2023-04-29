@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lab 1.5</title>
+    <script>
+        function buttonPressed(){
+            let text ="Форму відправлено";
+            alert(text);
+        }
+        l=0;
+        function dataBase(test) {
+            var counter=0;
+            if (test.q1[2].checked) {counter++;}
+            if (test.q2[1].checked) {counter++;}
+            if (test.q3[2].checked) {counter++;}
+            if (test.q4[0].checked) {counter++;}
+            if (test.q5[0].checked) {counter++;}
+
+            if (l==0)
+            {
+                counter=counter;
+            }
+            else
+            {
+                counter=0;
+            }
+            l=l+1;
+            document.test.display.value = counter;
+        }
+    </script>
+</head>
+<body>
+<div>
+    <h1>Регістрація</h1>
+    <form method="post" action="">
+        <table>
+            <tr>
+                <td><label for="login">Ім'я:</label></td>
+                <td><input type="text" name="login" id="login" placeholder="Введіть своє ім'я" /></td>
+            </tr>
+            <tr>
+                <td><label for="email">E-mail:</label></td>
+                <td><input type="email" name="email" id="email" placeholder="Введіть свій e-mail" /></td>
+            </tr>
+            <tr>
+                <td><label for="password">Пароль:</label></td>
+                <td><input type="password" name="password" id="password" placeholder="Введіть пароль" /></td>
+            </tr>
+        </table><br>
+        <input onclick="buttonPressed()" type="submit" value="Зареєструватися" />
+    </form>
+</div>
+<br/>
+<hr/>
+<a href="1.6.html" target = "content">HTML Test</a>
+
+
+</body>
+</html>

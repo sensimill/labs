@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lab 1.3</title>
+    <script>
+        function buttonPressed(){
+            let text ="Форму відправлено";
+            alert(text);
+        }
+        l=0;
+        function dataBase(test) {
+            var counter=0;
+            if (test.q1[2].checked) {counter++;}
+            if (test.q2[1].checked) {counter++;}
+            if (test.q3[2].checked) {counter++;}
+            if (test.q4[0].checked) {counter++;}
+            if (test.q5[0].checked) {counter++;}
+
+            if (l==0)
+            {
+                counter=counter;
+            }
+            else
+            {
+                counter=0;
+            }
+            l=l+1;
+            document.test.display.value = counter;
+        }
+    </script>
+</head>
+<body>
+<style>
+    body {
+        background-color: aliceblue;
+        background-size: 100%;
+    }
+    .hover01 figure img {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    .hover01 figure:hover img {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+
+</style>
+<body>
+<!--Организация блока с помощью внутреннео описания css-->
+<table cellpadding="50%" style="background-color: gainsboro; border:1px solid black" height="100%" width="100%">
+    <tr >
+        <td width="300px" colspan="2">
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
+        </td>
+        <td><div class ="hover01 column"><figure><img width="350px" height="280px" src="../nau.png"></figure></div></td>
+    </tr>
+    <tr >
+        <td rowspan="2">
+            <p> Lorem ipsum dolor sit amet <i>consectetur adipisicing</i> elit. Ipsa, quae est aliquam modi, aperiam veritatis, similique sunt itaque sed error et unde corporis aspernatur. Nesciunt amet nobis exercitationem harum assumenda atque enim aliquam deleniti dolore saepe in magni quis cum obcaecati laborum id ipsum, eum, distinctio, at sapiente nisi eos!</p>
+        </td>
+        <td>
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. </p>
+
+        <td>
+            <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+        </td>
+    </tr>
+</table>
+<br>
+<hr/>
+<div>
+    <h1>Регістрація</h1>
+    <form method="post" action="">
+        <table>
+            <tr>
+                <td><label for="login">Ім'я:</label></td>
+                <td><input type="text" name="login" id="login" placeholder="Введіть своє ім'я" /></td>
+            </tr>
+            <tr>
+                <td><label for="email">E-mail:</label></td>
+                <td><input type="email" name="email" id="email" placeholder="Введіть свій e-mail" /></td>
+            </tr>
+            <tr>
+                <td><label for="password">Пароль:</label></td>
+                <td><input type="password" name="password" id="password" placeholder="Введіть пароль" /></td>
+            </tr>
+        </table><br>
+        <input onclick="buttonPressed()" type="submit" value="Зареєструватися" />
+    </form>
+</div>
+<br/>
+<form method="post" name="test">
+    <h2>Тест HTML</h2>
+
+    <h3><strong>1. Для чого потрібен тег < div >?</strong></h3><div>
+
+    <input name="q1" value="11" type="radio">використовується для завантаження і відображення об'єктів; <br>
+    <input name="q1" value="12" type="radio">задає вирівнювання вмісту тега; <br>
+    <input name="q1" value="13" type="radio">призначений для виділення фрагмента документа з метою зміни виду вмісту. <br>
+</div>
+
+    <h3><strong>2. Який тег встановлює форму на сторінці?</strong></h3>
+    <div>
+
+        <input name="q2" value="21" type="radio"> < div >; <br>
+        <input name="q2" value="22" type="radio"> < form >; <br>
+        <input name="q2" value="23" type="radio"> < frameset >. <br>
+    </div>
+
+    <h3><strong>3. Для чого використовується атрибут "class"?</strong></h3><div>
+    <input name="q3" value="31" type="radio">Приховує вміст елемента від перегляду;  <br>
+    <input name="q3" value="32" type="radio">Встановлює контекстне меню для елемента; <br>
+    <input name="q3" value="33" type="radio">Визначає ім'я класу, яке дозволяє зв'язати тег зі стильовим оформленням. <br>
+
+</div>
+    <h3><strong>4. Який тег використовується для вставки посилань?</strong></h3><div >
+    <input name="q4" value="41" type="radio">< a >; <br>
+    <input name="q4" value="42" type="radio">< br >; <br>
+    <input name="q4" value="43" type="radio">< s >. <br>
+
+</div>
+    <h3><strong>5. Де можна використовувати атрибут "target"?</strong></h3><div>
+    <input name="q5" value="51" type="radio">< a >; <br>
+    <input name="q5" value="52" type="radio">< br >; <br>
+    <input name="q5" value="53" type="radio">< s >. <br>
+
+
+    <table>
+        <tbody><tr>
+            <td colspan="3"><p><strong>Натисніть на кнопку для результатів</strong></p></td>
+        </tr>
+        <tr>
+            <td><strong><input name="check" onclick="dataBase(this.form)" value=" Порахувати " type="button"></strong></td>
+            <td><strong><textarea cols="5" name="display" rows="1" wrap="soft"></textarea></strong></td>
+
+        </tr>
+        </tbody></table>
+</form>
+
+
+
+
+</body>
+</html>
